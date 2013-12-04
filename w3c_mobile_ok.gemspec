@@ -8,9 +8,9 @@ Gem::Specification.new do |spec|
   spec.version       = W3CMobileOk::VERSION
   spec.authors       = ['Patricio Mac Adden', 'J. Francisco Raposeiras']
   spec.email         = ['patriciomacadden@gmail.com', 'rapofran@gmail.com']
-  spec.description   = %q{TODO: Write a gem description}
-  spec.summary       = %q{TODO: Write a gem summary}
-  spec.homepage      = ''
+  spec.description   = 'W3C mobileOK Checker - Is your Web site mobile-friendly?'
+  spec.summary       = 'W3C mobileOK Checker - Is your Web site mobile-friendly?'
+  spec.homepage      = 'https://github.com/templ-ar/w3c_mobile_ok'
   spec.license       = 'MIT'
 
   spec.files         = `git ls-files`.split($/)
