@@ -8,6 +8,11 @@ module W3CMobileOk
 
     def parse!
       agent = Mechanize.new
+
+      # from http://mechanize.rubyforge.org/Mechanize.html#method-i-keep_alive-3D
+      # to skip Error: too many connection resets (due to Net::ReadTimeout - Net::ReadTimeout) 
+      agent.keep_alive = false
+
       page = agent.get @url
 
       # if the given URL doesn't exist any more
