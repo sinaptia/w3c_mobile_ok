@@ -33,9 +33,9 @@ module W3CMobileOk
         failure.description = node.search('.desc').children.last.text.split("\n").map(&:strip).join(' ')
 
         failure.best_practice = BestPractice.new
-        failure.best_practice.why = node.search('.why .explanation').children.last.text.split("\n").map(&:strip).join(' ')
-        failure.best_practice.how = node.search('.how .explanation').children.last.text.split("\n").map(&:strip).join(' ') if node.search('.how .explanation').any?
-        failure.best_practice.where = node.search('div[id$=where] .explanation').children.map(&:text).join.split("\n").map(&:strip).join(' ')
+        failure.best_practice.why = node.search('.why .explanation').children.last.text.split("\n").map(&:strip).join(' ') if node.search('.why .explanation').children.any?
+        failure.best_practice.how = node.search('.how .explanation').children.last.text.split("\n").map(&:strip).join(' ') if node.search('.how .explanation').children.any?
+        failure.best_practice.where = node.search('div[id$=where] .explanation').children.map(&:text).join.split("\n").map(&:strip).join(' ') if node.search('div[id$=where] .explanation').children.any?
 
         result.failures << failure
       end
