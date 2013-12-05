@@ -10,6 +10,9 @@ module W3CMobileOk
       agent = Mechanize.new
       page = agent.get @url
 
+      # if the given URL doesn't exist any more
+      raise NonExistentResourceError if page.link_with(text: /The resource under test could not be retrieved./)
+
       result = Result.new
       result.score = page.search('#score .hd strong').text
       result.page_size = page.search('#pagesize .hd strong').text
